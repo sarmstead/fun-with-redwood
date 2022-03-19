@@ -1,6 +1,6 @@
 export const QUERY = gql`
   query ArticlesQuery {
-    posts {
+    articles: posts {
       id
     }
   }
@@ -14,10 +14,10 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
-export const Success = ({ posts }) => {
+export const Success = ({ articles }) => {
   return (
     <ul>
-      {posts.map((item) => {
+      {articles.map((item) => {
         return <li key={item.id}>{JSON.stringify(item)}</li>
       })}
     </ul>
