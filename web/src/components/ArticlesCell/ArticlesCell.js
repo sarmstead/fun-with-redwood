@@ -1,6 +1,6 @@
 export const QUERY = gql`
   query ArticlesQuery {
-    post {
+    posts {
       id
     }
   }
