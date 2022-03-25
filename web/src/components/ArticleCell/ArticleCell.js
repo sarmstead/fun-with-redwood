@@ -1,7 +1,10 @@
 export const QUERY = gql`
   query FindArticleQuery($id: Int!) {
-    article: article(id: $id) {
-      id
+    article: post(id: $id) {
+      id,
+      title,
+      body,
+      createdAt
     }
   }
 `
