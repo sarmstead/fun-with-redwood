@@ -2,14 +2,14 @@ import { Link, routes } from '@redwoodjs/router';
 
 const Article = ({ article }) => {
   return (
-  <article key={thisArticle.id}>
+  <article>
     <header>
       <h2>
-        {thisArticle.title}
+        {article.title}
       </h2>
     </header>
-    <p>{thisArticle.body}</p>
-    <div>Posted at: {thisArticle.createdAt}</div>
+    <p>{article.body}</p>
+    <div>Posted at: {article.createdAt}</div>
   </article>
 )
 }

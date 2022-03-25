@@ -19,7 +19,7 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ articles }) => {
-  articles.map((article) => {
-    return <Article article={article} />
-  })
+  return articles.map((article) => (
+    <Article key={article.id} article={article} />
+  ))
 }
