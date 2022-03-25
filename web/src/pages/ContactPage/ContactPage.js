@@ -1,6 +1,6 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
-import { Form, TextField, Submit, TextAreaField, FieldError, Label } from '@redwoodjs/forms'
+import { Form, TextField, Submit, TextAreaField, FieldError, Label, FormError } from '@redwoodjs/forms'
 import { useMutation } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
@@ -30,6 +30,8 @@ const ContactPage = () => {
       <Toaster />
 
       <Form onSubmit={onSubmit} config={{ mode: 'onBlur' }}>
+        <FormError error={error} wrapperClassName="form-error" />
+
         <Label name="name" errorClassName="error">Name</Label>
         <TextField name="name" validation={{ required: true }} errorClassName="error" />
         <FieldError name="name" className="error" />
@@ -39,10 +41,6 @@ const ContactPage = () => {
           name="email"
           validation={{
             required: true,
-            pattern: {
-              value: /^[^@]+@[^.]+\..+$/,
-              message: 'Please enter a valid email address',
-            }
           }}
           errorClassName="error" />
         <FieldError name="email" className="error" />
