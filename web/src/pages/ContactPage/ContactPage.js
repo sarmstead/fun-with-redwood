@@ -1,10 +1,22 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import { Form, TextField, Submit, TextAreaField, FieldError, Label } from '@redwoodjs/forms'
+import { useMutation } from '@redwoodjs/web'
+
+const CREATE_CONTACT = gql`
+  mutation CreateContactMutation($input: CreateContactInput!) {
+    createContact(input: $input) {
+      id
+    }
+  }
+`
 
 const ContactPage = () => {
+  const [create] = useMutation(CREATE_CONTACT)
+
   const onSubmit = (data) => {
     console.log(data);
+    create({ variables: { input: data } })
   };
   return (
     <>
