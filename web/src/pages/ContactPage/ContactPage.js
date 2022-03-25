@@ -12,7 +12,7 @@ const CREATE_CONTACT = gql`
 `
 
 const ContactPage = () => {
-  const [create] = useMutation(CREATE_CONTACT)
+  const [create, { loading, error }] = useMutation(CREATE_CONTACT)
 
   const onSubmit = (data) => {
     console.log(data);
@@ -44,7 +44,7 @@ const ContactPage = () => {
         <TextAreaField name="message" validation={{ required: true }} errorClassName="error" />
         <FieldError name="message" className="error" />
 
-        <Submit>Save</Submit>
+        <Submit disabled={loading}>Save</Submit>
       </Form>
     </>
   )
