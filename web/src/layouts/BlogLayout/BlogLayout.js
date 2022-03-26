@@ -3,7 +3,6 @@ import { Link, routes } from '@redwoodjs/router'
 
 const BlogLayout = ({ children }) => {
   const {isAuthenticated, currentUser, logOut} = useAuth();
-  console.log(currentUser);
   return <>
     <header>
       <div className="flex-between">
