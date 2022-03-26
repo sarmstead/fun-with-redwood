@@ -1,4 +1,7 @@
-# Redwood
+# Fun with Redwood!
+See the live site: [https://stellar-sorbet-ae0ebe.netlify.app/](https://stellar-sorbet-ae0ebe.netlify.app/)
+
+## About Redwood
 
 > **NOTICE:** RedwoodJS is very close to a stable version 1.0. In the last two years,
 > the project has matured significantly and is already used in production by a number
